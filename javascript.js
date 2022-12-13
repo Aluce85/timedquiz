@@ -86,3 +86,13 @@ function renderQuestion () {
     answerChoices.appendChild(button);
 }
 }
+
+function startQuiz() {
+    console.log("Start");
+    startQuiz.setAttribute("class", "hide");
+    questionName.removeAttribute("class");
+    renderQuestion();
+    startTheTimer();
+}
+
+
