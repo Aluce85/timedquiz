@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timed Quiz</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <div id="startPage">
@@ -18,7 +19,12 @@
         <div id="choices"></div>
     </div>
     <div id="endPage" class="hide"></div>
-    
+    <h2>You finished the quiz!</h2>
+    <p>Your final score is: <span id="finalScore"></span></p>
+    <p>Enter Your Initials: <input type="text" id="userInitials" max="4"></p>
+    <button id="submit">Submit</button>
+    </div>
+
     
 </body>
 </html>
