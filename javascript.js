@@ -65,4 +65,24 @@ function answerCheck() {
         currentQuestion++;
         renderQuestion();
     }
+    if (currentTime <= 0 || currentQuestion === questions.length -1) {
+        endQuiz();
+    }
+    else {
+        renderQuestion();
+    }
+}
+
+function renderQuestion () {
+    let questionName = document.querySelector("#QuestionName");
+    let answerChoices = document.querySelector("#answerChoices");
+    answerChoices.textContent = "";
+    questionName.textContent = questions[currentQuestion].questionName;
+    for (let i = 0; i < questions[currentQuestion].choices.length; i++) {
+    let button = document.createElement("button");
+    button.onClick =answerCheck
+    button.setAttribute("value", questions[currentQuestion].choices[i]);
+    button.textContent = questions[currentQuestion].choices[i];
+    answerChoices.appendChild(button);
+}
 }
