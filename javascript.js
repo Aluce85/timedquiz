@@ -4,7 +4,7 @@ let timer = document.querySelector("#timer");
 let currentTime = 60;
 let currentQuestion =0;
 let quizQuestions = document.querySelector("#questions");
-let countdown;
+let countDown;
 const questions = [
     {
     questionTitle: "What is the biggest city in Texas by population?",
@@ -36,4 +36,33 @@ const questions = [
     choices: ["2010", "1997", "1994", "1996"],
     answer: "1996",
 }
-]
+];
+
+function endQuiz() {
+    clearInterval(countDown);
+    let endPage = document.querySelector("#endPage")
+    endPage.removeAttribute("class")
+    let endScore = document.querySelector("#endScore")
+    endScore.textContent= currentTime;
+    quizQuestions.setAttribute("class", "hide")
+}
+
+function answerCheck() {
+    console.log(this.value);
+    console.log(currentQuestion);
+    if (this.value !== questions[currentQuestion].answer) {
+        currentTime = currentTime -10;
+        if (currentTime < 0) {
+            currentTime = 0;
+        }
+        timer.textContent = currentTime;
+    }
+    if (this.value === questions[currentQuestion].answer) {
+        if (currentTime < 0) {
+            currentTime = 0;
+        }
+        timer.textContent = currentTime;
+        currentQuestion++;
+        renderQuestion();
+    }
+}
