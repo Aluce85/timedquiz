@@ -38,6 +38,14 @@ const questions = [
 }
 ];
 
+function startQuiz() {
+    console.log("Start");
+    startScreen.setAttribute("class", "hide");
+    questionsElement.removeAttribute("class");
+    renderQuestions();
+    startTimer();
+  }
+
 function endQuiz() {
     clearInterval(countDown);
     let endPage = document.querySelector("#endPage")
@@ -74,26 +82,21 @@ function answerCheck() {
 }
 
 function renderQuestion () {
-    let questionName = document.querySelector("#QuestionName");
+    let questionName = document.querySelector("#questionTitle");
     let answerChoices = document.querySelector("#answerChoices");
     answerChoices.textContent = "";
-    questionName.textContent = questions[currentQuestion].questionName;
-    for (let i = 0; i < questions[currentQuestion].choices.length; i++) {
+    questionName.textContent = questions[currentQuestion].questionTitle;
+ for (let i = 0; i < questions[currentQuestion].choices.length; i++) {
     let button = document.createElement("button");
-    button.onClick =answerCheck
+    button.onclick = answerCheck
     button.setAttribute("value", questions[currentQuestion].choices[i]);
     button.textContent = questions[currentQuestion].choices[i];
     answerChoices.appendChild(button);
 }
 }
 
-function startQuiz() {
-    console.log("Start");
-    startQuiz.setAttribute("class", "hide");
-    questionName.removeAttribute("class");
-    renderQuestion();
-    startTheTimer();
-}
+
+  
 
 function startTheTimer() {
     countDown = setInterval(() => {
@@ -102,8 +105,10 @@ function startTheTimer() {
         if (currentTime === 0) {
             clearInterval (countDown);
         }
-    }, 100)
+    }, 1000)
 }
-startButton.onClick = startQuiz;
+ 
+startButton.onclick = startQuiz;
+
 
 
