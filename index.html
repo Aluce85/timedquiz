@@ -4,27 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timed Quiz</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script src="javascript.js"></script>
 </head>
 <body>
-    <div id="startPage">
-        <h1>Quiz Challenge</h1>
-        <button id="startButton">Start</button>
+    <div id="startScreen">
+        <h1>Cowboy's Quiz</h1>
+        <button id="start">Start</button>
     </div>
     <p id="timer"></p>
     <div id="questions" class="hide">
-        <h2 id="question-name"></h2>
+        <h2 id="question-title"></h2>
         <div id="choices"></div>
     </div>
-    <div id="endPage" class="hide"></div>
-    <h2>You finished the quiz!</h2>
-    <p>Your final score is: <span id="finalScore"></span></p>
-    <p>Enter Your Initials: <input type="text" id="userInitials" max="4"></p>
-    <button id="submit">Submit</button>
+    <div id="endScreen" class="hide">
+        <h2>Final Score</h2>
+        <p>Your final score is: <span id="finalScore"></span></p>
+        <p>Enter Your Initials: <input type="text" id="initials" max="3"></p>
+        <button id="submit">Submit</button>
     </div>
-
-    
+    <script src="script.js"></script>
 </body>
 </html>

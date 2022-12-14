@@ -1,0 +1,21 @@
+#start {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: navy;
+    color: white;
+    width:200px;
+    height: 100px;
+  }
+
+  #timer {
+    font-size: 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  body {
+    background-color: lightgrey;
+  }
+  
