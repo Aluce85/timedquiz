@@ -95,4 +95,15 @@ function startQuiz() {
     startTheTimer();
 }
 
+function startTheTimer() {
+    countDown = setInterval(() => {
+        timer.textContent = currentTime;
+        currentTime--;
+        if (currentTime === 0) {
+            clearInterval (countDown);
+        }
+    }, 100)
+}
+startButton.onClick = startQuiz;
+
 
